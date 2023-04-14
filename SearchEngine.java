@@ -23,7 +23,7 @@ class Handler implements URLHandler {
             System.out.println("Path: " + url.getPath());
             if (url.getPath().contains("/search")) {
                 String[] parameters = url.getQuery().split("=");
-                String searchQuery = parameters[1]
+                String searchQuery = parameters[1];
                 if (parameters[0].equals("s")) {
                     String allFoundString = "";
                     for (String s: webArray){
