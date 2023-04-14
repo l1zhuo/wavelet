@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.*;
 
-class Handler implements URLHandler {
+class myHandler implements URLHandler {
    
     ArrayList<String> webArray = new ArrayList<>();
 
