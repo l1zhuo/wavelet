@@ -19,6 +19,7 @@ class myHandler implements URLHandler {
                 webArray.add(parameters[1]);
                 return String.format("New String added: %s", parameters[1]);
             }
+            return "need a string to add";
         } else {
             System.out.println("Path: " + url.getPath());
             if (url.getPath().contains("/search")) {
@@ -28,7 +29,7 @@ class myHandler implements URLHandler {
                     String allFoundString = "";
                     for (String s: webArray){
                         if(s.contains(searchQuery)){
-                            allFoundString = allFoundString + s + " and "; 
+                            allFoundString = allFoundString + s + "; "; 
                         }
                     }
                     return allFoundString;
@@ -47,6 +48,6 @@ public class SearchEngine {
 
         int port = Integer.parseInt(args[0]);
 
-        Server.start(port, new Handler());
+        Server.start(port, new myHandler());
     }
 }
