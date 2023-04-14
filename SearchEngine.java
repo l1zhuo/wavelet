@@ -8,11 +8,11 @@ class myHandler implements URLHandler {
 
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
-            String wholeList = "David's search list: ";
+            String wholeList = "David's search list: " ;
             for(String s: webArray){
                 wholeList = wholeList + s +" ";
             }
-            return wholeLIst; 
+            return wholeList; 
         } else if (url.getPath().equals("/add")) {
             String[] parameters = url.getQuery().split("=");
             if (parameters[0].equals("s")) {
