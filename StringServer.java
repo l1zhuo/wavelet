@@ -4,16 +4,17 @@ import java.util.*;
 
 class StringHandler implements URLHandler{
     ArrayList<String> stringList = new ArrayList<>();
-    String wholeList = "";
+    
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
-            
+            String wholeList = "";
             for(String s: stringList){
                 wholeList +="\n "+s;
             }
             return wholeList; 
         } else if (url.getPath().equals("/add-message")) {
             String[] parameters = url.getQuery().split("=");
+            String wholeList = "";
             if (parameters[0].equals("s")) {
                 stringList.add(parameters[1]);
                 for(String s: stringList){
@@ -36,6 +37,6 @@ public class StringServer {
 
         int port = Integer.parseInt(args[0]);
 
-        Server.start(port, new myHandler());
+        Server.start(port, new StringHandler());
     }
 }
