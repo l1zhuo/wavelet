@@ -10,8 +10,10 @@ class myHandler implements URLHandler {
         if (url.getPath().equals("/")) {
             String wholeList = "David's search list: " ;
             for(String s: webArray){
-                wholeList = wholeList + s +" ";
+                wholeList +="\n"+s;
+                System.out.println(s);
             }
+            
             return wholeList; 
         } else if (url.getPath().equals("/add")) {
             String[] parameters = url.getQuery().split("=");
